@@ -28,11 +28,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
- 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.   - name: Terraform init
     - name: Terraform init
       uses: hashicorp/terraform-github-actions@master
@@ -56,7 +51,7 @@ jobs:
       uses: hashicorp/terraform-github-actions@master
       with:
          tf_actions_version: 0.14.3
-         tf_actions_subcommand: ${{ github.events.inputs.terraform_action}}
+         tf_actions_subcommand: ${{ github.event.inputs.terraform_action}}
          tf_actions_working_dir: '.'
          tf_actions_comment: true  
          args: '-auto-approve -var="credentials.tfvars"'
@@ -66,7 +61,7 @@ jobs:
       uses: hashicorp/terraform-github-actions@master
       with:
          tf_actions_version: 0.14.3
-         tf_actions_subcommand: ${{ github.events.inputs.terraform_action}}
+         tf_actions_subcommand: ${{ github.event.inputs.terraform_action}}
          tf_actions_working_dir: '.'
          tf_actions_comment: true
          args: '-auto-approve -var="credentials.tfvars"'
