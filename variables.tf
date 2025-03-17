@@ -7,7 +7,7 @@ variable "website_index_document" {
   default = "index.html"
 }*/
 
-variable "aws_access_key_id" {
+/*variable "aws_access_key_id" {
   type        = string
   description = "AWS Access Key ID"
   sensitive   = true
@@ -17,7 +17,7 @@ variable "aws_secret_access_key" {
   type        = string
   description = "AWS Secret Access Key"
   sensitive   = true
-}
+}*/
 
 variable "aws_instance_names" {
   type        = list(string)
