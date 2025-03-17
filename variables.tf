@@ -8,7 +8,7 @@ variable "website_index_document" {
 }*/
 
 variable "aws_access_key_id" {
-  type = string
+  type        = string
   description = "AWS Access Key ID"
   sensitive   = true
 }
@@ -20,7 +20,7 @@ variable "aws_secret_access_key" {
 }
 
 variable "aws_instance_names" {
-  type = list(string)
+  type        = list(string)
   description = "instance names"
-  default = ["webserve01","webserve02","webserve03"]
+  default     = ["webserve01", "webserve02"]
 }
