@@ -1,4 +1,11 @@
 terraform {
+
+ backend "s3" {
+        bucket = "firstec2-instance-s3bucket-16032025"
+        key    = "S3-backend-tfstate"  # Optional:  Specify a path for state files
+        region = "us-east-1"
+        encrypt = true  # Optional: Encrypt the state file
+      }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
