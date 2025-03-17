@@ -22,5 +22,5 @@ variable "aws_secret_access_key" {
 variable "aws_instance_names" {
   type        = list(string)
   description = "instance names"
-  default     = ["webserve01", "webserve02"]
+  default     = ["webserve01", "webserve02","webserver03"]
 }
